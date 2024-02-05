@@ -22,29 +22,15 @@ public class Main {
     public static void main(String[] args) {
         ConnectionCDDB.getConnection();
         UserDao ud = new UserDao();
-        ud.toList();
-        for(User u : ud.getUsers()) {
-            System.out.println(u);
-        }
-//        AppointmentWindow aw = new AppointmentWindow();
-//        BillingWindow bw = new BillingWindow();
-//        CustomerWindow cw = new CustomerWindow();
+        
         LogInWindow lw = new LogInWindow();
-//        MenuWindow mw = new MenuWindow();
-//        
-        LC_Cerrar adc = new LC_Cerrar(lw);
-        lw.addListenerCerrar(adc);
-//        
-//        aw.setVisible(true);
-//        aw.setLocationRelativeTo(null);
-//        bw.setVisible(true);
-//        bw.setLocationRelativeTo(null);
-//        cw.setVisible(true);
-//        cw.setLocationRelativeTo(null);
+        
+        IngresarBtController ibc = new IngresarBtController(ud, lw);
+        
         lw.setVisible(true);
         lw.setLocationRelativeTo(null);
-//        mw.setVisible(true);
-//        mw.setLocationRelativeTo(null);
+        lw.setIngresarActionListener(ibc);
+        
     }
     
 }

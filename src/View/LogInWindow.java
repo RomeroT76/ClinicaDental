@@ -5,6 +5,7 @@
 package View;
 
 import Controller.*;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
@@ -18,6 +19,18 @@ public class LogInWindow extends javax.swing.JFrame {
      */
     public LogInWindow() {
         initComponents();
+    }
+    
+    public String getUserName() {
+        return CampoUsuario.getText();
+    }
+    
+    public String getPassword() {
+        return jPasswordField1.getText();
+    }
+    
+    public void setIngresarActionListener(ActionListener al) {
+        BotonIngresar.addActionListener(al);
     }
 
     /**
