@@ -45,6 +45,8 @@ public class IngresarBtController  implements ActionListener{
          if(fl == true) {
                 JOptionPane.showMessageDialog(null, "Credenciales Validas");
                 lw.dispose();
+                lw.setCampoUsuario("");
+                lw.setjPasswordField1("");
                 mw.setVisible(true);
          } else {
                 JOptionPane.showMessageDialog(null, "Credenciales Invalidas");

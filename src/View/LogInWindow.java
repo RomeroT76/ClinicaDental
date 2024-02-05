@@ -5,6 +5,9 @@
 package View;
 
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -27,6 +30,14 @@ public class LogInWindow extends javax.swing.JFrame {
     
     public String getPassword() {
         return jPasswordField1.getText();
+    }
+
+    public void setCampoUsuario(String t) {
+        this.CampoUsuario.setText(t);
+    }
+
+    public void setjPasswordField1(String t) {
+        this.jPasswordField1.setText(t);
     }
     
     public void setIngresarActionListener(ActionListener al) {
