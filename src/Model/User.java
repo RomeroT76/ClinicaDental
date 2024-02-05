@@ -13,15 +13,19 @@ public class User {
     private String userName;
     private String password;
     private String rol;
-
-    public User() {
-    }
+    private String currentUser;
+    private String currentRol;
 
     public User(int userId, String userName, String password, String rol) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
         this.rol = rol;
+        this.currentUser = "";
+        this.currentRol = "";
+    }
+
+    public User() {
     }
 
     public int getUserId() {
@@ -55,6 +59,24 @@ public class User {
     public void setRol(String rol) {
         this.rol = rol;
     }
+
+    public String getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(String currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public String getCurrentRol() {
+        return currentRol;
+    }
+
+    public void setCurrentRol(String currentRol) {
+        this.currentRol = currentRol;
+    }
+    
+    
 
     @Override
     public String toString() {

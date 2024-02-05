@@ -7,6 +7,7 @@ package Controller;
 import Model.User;
 import Model.UserDao;
 import View.LogInWindow;
+import View.MenuWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -16,34 +17,35 @@ import javax.swing.JOptionPane;
  * @author rober
  */
 public class IngresarBtController  implements ActionListener{
-    UserDao ud;
-    LogInWindow lw;
+    private UserDao ud;
+    private LogInWindow lw;
+    private MenuWindow mw;
+    private User cu;
 
-    public IngresarBtController(UserDao ud, LogInWindow lw) {
+    public IngresarBtController(UserDao ud, LogInWindow lw, MenuWindow mw, User cu) {
         this.ud = ud;
         this.lw = lw;
+        this.mw = mw;
+        this.cu = cu;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         boolean fl = false;
-        String permiso = "";
         ud.toList();
         for(User u : ud.getUsers()) {
             if(u.getUserName().equalsIgnoreCase(lw.getUserName()) 
-                    && u.getPassword().equalsIgnoreCase(lw.getPassword())) {
+                    && u.getPassword().equals(lw.getPassword())) {
                 fl = true;
-                permiso = u.getRol();
+                cu.setCurrentUser(u.getUserName());
+                cu.setCurrentRol(u.getRol());
                 break;
             }
         }  
          if(fl == true) {
                 JOptionPane.showMessageDialog(null, "Credenciales Validas");
-                if(permiso.equalsIgnoreCase("a")) {
-                    JOptionPane.showMessageDialog(null, "Admin");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Gen");
-                }
+                lw.dispose();
+                mw.setVisible(true);
          } else {
                 JOptionPane.showMessageDialog(null, "Credenciales Invalidas");
             }

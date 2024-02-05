@@ -4,9 +4,7 @@
  */
 package View;
 
-import Controller.*;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 
 /**
  *
@@ -19,6 +17,8 @@ public class LogInWindow extends javax.swing.JFrame {
      */
     public LogInWindow() {
         initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
     
     public String getUserName() {
@@ -31,6 +31,10 @@ public class LogInWindow extends javax.swing.JFrame {
     
     public void setIngresarActionListener(ActionListener al) {
         BotonIngresar.addActionListener(al);
+    }
+    
+    public void setCloseListener(ActionListener al) {
+        this.BotonSalir.addActionListener(al);
     }
 
     /**
@@ -265,13 +269,5 @@ public class LogInWindow extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
-
-    public void addListenerCerrar(LC_Cerrar adc){
-        BotonSalir.addActionListener(adc);
-    }
-    
-    public JButton getBotonSalir() {
-        return BotonSalir;
-    }
 
 }

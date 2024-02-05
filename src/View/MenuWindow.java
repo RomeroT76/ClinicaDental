@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author USER
@@ -15,6 +17,15 @@ public class MenuWindow extends javax.swing.JFrame {
      */
     public MenuWindow() {
         initComponents();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void setCloseListener(ActionListener al) {
+        this.BotonSalir.addActionListener(al);
+    }
+    
+    public void setLogOutListener(ActionListener al) {
+        this.CerrarSesion.addActionListener(al);
     }
 
     /**
@@ -32,7 +43,7 @@ public class MenuWindow extends javax.swing.JFrame {
         BotonFacturacion = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        CerrarSesion = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,12 +86,12 @@ public class MenuWindow extends javax.swing.JFrame {
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/dientes3.png"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 270, 490));
 
-        jButton1.setBackground(new java.awt.Color(0, 80, 130));
-        jButton1.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CERRAR SESIÓN");
-        jButton1.setBorder(null);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 442, 160, 30));
+        CerrarSesion.setBackground(new java.awt.Color(0, 80, 130));
+        CerrarSesion.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        CerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        CerrarSesion.setText("CERRAR SESIÓN");
+        CerrarSesion.setBorder(null);
+        getContentPane().add(CerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 442, 160, 30));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 490));
@@ -129,9 +140,9 @@ public class MenuWindow extends javax.swing.JFrame {
     private javax.swing.JButton BotonClientes;
     private javax.swing.JButton BotonFacturacion;
     private javax.swing.JButton BotonSalir;
+    private javax.swing.JButton CerrarSesion;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel NombreMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

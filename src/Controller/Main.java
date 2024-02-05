@@ -12,6 +12,7 @@ import View.BillingWindow;
 import View.CustomerWindow;
 import View.LogInWindow;
 import View.MenuWindow;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,17 +21,21 @@ import View.MenuWindow;
 public class Main {
     
     public static void main(String[] args) {
-        ConnectionCDDB.getConnection();
+        User cu = new User();
         UserDao ud = new UserDao();
         
         LogInWindow lw = new LogInWindow();
+        MenuWindow mw = new MenuWindow();
         
-        IngresarBtController ibc = new IngresarBtController(ud, lw);
+        IngresarBtController ibc = new IngresarBtController(ud, lw, mw, cu);
+        CloseBtController cbc = new CloseBtController();
+        LogOutBtController lobc = new LogOutBtController(cu, lw, mw);
         
-        lw.setVisible(true);
-        lw.setLocationRelativeTo(null);
         lw.setIngresarActionListener(ibc);
+        lw.setCloseListener(cbc);
         
+        mw.setCloseListener(cbc);
+        mw.setLogOutListener(lobc);
     }
     
 }

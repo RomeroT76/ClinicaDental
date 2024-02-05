@@ -119,8 +119,10 @@ public class CustomerWindow extends javax.swing.JFrame {
         BotonModificar.setBorder(null);
         getContentPane().add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 110, 30));
 
+        BotonBuscar.setBackground(new java.awt.Color(0, 80, 130));
         BotonBuscar.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        BotonBuscar.setText("Buscar");
+        BotonBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        BotonBuscar.setText("BUSCAR");
         BotonBuscar.setBorder(null);
         getContentPane().add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 90, 30));
 

@@ -4,25 +4,26 @@
  */
 package Controller;
 
-import View.LogInWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author erick
+ * @author rober
  */
-public class LC_Cerrar implements ActionListener{
-    
-    private LogInWindow login;
+public class CloseBtController implements ActionListener{
 
-    public LC_Cerrar(LogInWindow login) {
-        this.login = login;
+    public CloseBtController() {
+        
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        login.dispose();
+       int op = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea cerrar la aplicacion", "Confirmar", JOptionPane.YES_NO_OPTION);
+        if (op == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }
     
 }
