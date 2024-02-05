@@ -27,6 +27,12 @@ public class MenuWindow extends javax.swing.JFrame {
     public void setLogOutListener(ActionListener al) {
         this.CerrarSesion.addActionListener(al);
     }
+    
+    public void setMenusBtListeners(ActionListener al, ActionListener al2, ActionListener al3) {
+        this.BotonClientes.addActionListener(al);
+        this.BotonCitas.addActionListener(al2);
+        this.BotonFacturacion.addActionListener(al3);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

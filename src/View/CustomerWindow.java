@@ -15,6 +15,7 @@ public class CustomerWindow extends javax.swing.JFrame {
      */
     public CustomerWindow() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -54,6 +55,7 @@ public class CustomerWindow extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Cedula.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N

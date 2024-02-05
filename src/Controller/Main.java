@@ -26,16 +26,23 @@ public class Main {
         
         LogInWindow lw = new LogInWindow();
         MenuWindow mw = new MenuWindow();
+        CustomerWindow cw = new CustomerWindow();
+        AppointmentWindow aw = new AppointmentWindow();
+        BillingWindow bw = new BillingWindow();
         
         IngresarBtController ibc = new IngresarBtController(ud, lw, mw, cu);
         CloseBtController cbc = new CloseBtController();
         LogOutBtController lobc = new LogOutBtController(cu, lw, mw);
+        CustomerBtController cubc = new CustomerBtController(mw, cw);
+        AppointmentBtController abc = new AppointmentBtController(mw, aw);
+        BillingBtController bbc = new BillingBtController(mw, bw);
         
         lw.setIngresarActionListener(ibc);
         lw.setCloseListener(cbc);
         
         mw.setCloseListener(cbc);
         mw.setLogOutListener(lobc);
+        mw.setMenusBtListeners(cubc, abc, bbc);
     }
     
 }

@@ -81,11 +81,12 @@ public class AppointmentWindow extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TituloCitas.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         TituloCitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/tooth-6783172_1280.png"))); // NOI18N
-        TituloCitas.setText("ADIMINISTRADOR DE CITAS");
+        TituloCitas.setText("ADMINISTRADOR DE CITAS");
         getContentPane().add(TituloCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 570, -1));
 
         Cedula.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
@@ -295,7 +296,7 @@ public class AppointmentWindow extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/SeekPng.com_tooth-logo-png_3299701_1.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1230, 770));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 780));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 330, 20));
