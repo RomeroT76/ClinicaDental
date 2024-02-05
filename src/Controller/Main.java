@@ -32,7 +32,7 @@ public class Main {
         LogInWindow lw = new LogInWindow();
 //        MenuWindow mw = new MenuWindow();
 //        
-       LC_Cerrar adc = new LC_Cerrar(lw);
+        LC_Cerrar adc = new LC_Cerrar(lw);
         lw.addListenerCerrar(adc);
 //        
 //        aw.setVisible(true);

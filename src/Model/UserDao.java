@@ -26,7 +26,7 @@ public class UserDao {
     }
     
     public void toList() {
-        query = "SELECT * FROM usuarios";
+        query = "SELECT * FROM cd_usuarios";
         try {
             con = ConnectionCDDB.getConnection();
             ps = con.prepareStatement(query); 
