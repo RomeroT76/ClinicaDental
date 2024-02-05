@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author USER
@@ -16,6 +18,10 @@ public class CustomerWindow extends javax.swing.JFrame {
     public CustomerWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    public void SetBackBtListener(ActionListener al) {
+        this.atrasBt.addActionListener(al);
     }
 
     /**
@@ -44,6 +50,7 @@ public class CustomerWindow extends javax.swing.JFrame {
         BotonBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         NombreCD = new javax.swing.JLabel();
+        atrasBt = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -51,8 +58,8 @@ public class CustomerWindow extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        TituloClientes = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        TituloClientes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -135,6 +142,9 @@ public class CustomerWindow extends javax.swing.JFrame {
         NombreCD.setText("ODONTOSALUD");
         getContentPane().add(NombreCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, -1));
 
+        atrasBt.setText("ATRAS");
+        getContentPane().add(atrasBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, -1, -1));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/teeth-implant-index.jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -90, 340, 610));
 
@@ -156,12 +166,13 @@ public class CustomerWindow extends javax.swing.JFrame {
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 330, 10));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         TituloClientes.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         TituloClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/tooth-6783172_1280.png"))); // NOI18N
         TituloClientes.setText("CLIENTES");
-        getContentPane().add(TituloClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+        jPanel1.add(TituloClientes);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 520));
 
         pack();
@@ -224,6 +235,7 @@ public class CustomerWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Nombres;
     private javax.swing.JLabel Telefono;
     private javax.swing.JLabel TituloClientes;
+    private javax.swing.JButton atrasBt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;

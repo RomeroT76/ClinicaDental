@@ -4,7 +4,6 @@
  */
 package Controller;
 
-import DbConnection.ConnectionCDDB;
 import Model.User;
 import Model.UserDao;
 import View.AppointmentWindow;
@@ -12,7 +11,6 @@ import View.BillingWindow;
 import View.CustomerWindow;
 import View.LogInWindow;
 import View.MenuWindow;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -36,6 +34,9 @@ public class Main {
         CustomerBtController cubc = new CustomerBtController(mw, cw);
         AppointmentBtController abc = new AppointmentBtController(mw, aw);
         BillingBtController bbc = new BillingBtController(mw, bw);
+        BackCustomerBTListener bcbl = new BackCustomerBTListener(cw, mw);
+        BackAppointmentBtController babc = new BackAppointmentBtController(aw, mw);
+        BackBillingBtController bbbc = new BackBillingBtController(bw, mw);
         
         lw.setIngresarActionListener(ibc);
         lw.setCloseListener(cbc);
@@ -43,6 +44,12 @@ public class Main {
         mw.setCloseListener(cbc);
         mw.setLogOutListener(lobc);
         mw.setMenusBtListeners(cubc, abc, bbc);
+        
+        cw.SetBackBtListener(bcbl);
+        
+        aw.setBackBtListener(babc);
+        
+        bw.setBackBtListener(bbbc);
     }
     
 }

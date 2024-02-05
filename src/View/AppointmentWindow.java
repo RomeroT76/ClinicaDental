@@ -4,8 +4,7 @@
  */
 package View;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -19,6 +18,11 @@ public class AppointmentWindow extends javax.swing.JFrame {
     public AppointmentWindow() {
         initComponents();
         NumDia.setToolTipText("15");
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void setBackBtListener (ActionListener al) {
+        this.atrasBt.addActionListener(al);
     }
 
     /**
@@ -33,6 +37,7 @@ public class AppointmentWindow extends javax.swing.JFrame {
         TituloCitas = new javax.swing.JLabel();
         Cedula = new javax.swing.JLabel();
         CampoCedula = new javax.swing.JTextField();
+        atrasBt = new javax.swing.JButton();
         BotonBuscar = new javax.swing.JButton();
         NombreCompleto = new javax.swing.JLabel();
         CampoNombreCompleto = new javax.swing.JTextField();
@@ -76,9 +81,9 @@ public class AppointmentWindow extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        Fondo = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,6 +100,9 @@ public class AppointmentWindow extends javax.swing.JFrame {
 
         CampoCedula.setBorder(null);
         getContentPane().add(CampoCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 330, 30));
+
+        atrasBt.setText("ATRAS");
+        getContentPane().add(atrasBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
         BotonBuscar.setBackground(new java.awt.Color(0, 80, 130));
         BotonBuscar.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
@@ -266,11 +274,6 @@ public class AppointmentWindow extends javax.swing.JFrame {
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("MODIFICAR");
         jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 220, 90, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
@@ -296,20 +299,17 @@ public class AppointmentWindow extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/SeekPng.com_tooth-logo-png_3299701_1.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 780));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 330, 20));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 790));
+        jPanel1.add(Fondo);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1230, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,6 +378,7 @@ public class AppointmentWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Servicio;
     private javax.swing.JScrollPane ServiciosAnadidos;
     private javax.swing.JLabel TituloCitas;
+    private javax.swing.JButton atrasBt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

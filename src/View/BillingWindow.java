@@ -4,8 +4,7 @@
  */
 package View;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -19,6 +18,10 @@ public class BillingWindow extends javax.swing.JFrame {
     public BillingWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    public void setBackBtListener(ActionListener al) {
+        this.backBT.addActionListener(al);
     }
 
     /**
@@ -52,6 +55,7 @@ public class BillingWindow extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        backBT = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -176,6 +180,9 @@ public class BillingWindow extends javax.swing.JFrame {
         jLabel2.setText("DETALLE DE FACTURA");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, -1));
 
+        backBT.setText("ATRAS");
+        getContentPane().add(backBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
         jButton4.setBackground(new java.awt.Color(0, 80, 130));
         jButton4.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,6 +260,7 @@ public class BillingWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Nombres;
     private javax.swing.JLabel Telefono;
+    private javax.swing.JButton backBT;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
